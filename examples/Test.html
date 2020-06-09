@@ -7,63 +7,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>Jarretsville Pike</title>
 
-	<link rel="stylesheet" type="text/css" href="../build/potree/potree.css">
-	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="../libs/perfect-scrollbar/css/perfect-scrollbar.css">
-	<link rel="stylesheet" type="text/css" href="../libs/openlayers3/ol.css">
-	<link rel="stylesheet" type="text/css" href="../libs/spectrum/spectrum.css">
-	<link rel="stylesheet" type="text/css" href="../libs/jstree/themes/mixed/style.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/build/potree/potree.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/openlayers3/ol.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/spectrum/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/jstree/themes/mixed/style.css">
 </head>
 
 <body>
-	<script src="../libs/jquery/jquery-3.1.1.min.js"></script>
-	<script src="../libs/spectrum/spectrum.js"></script>
-	<script src="../libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
-	<script src="../libs/three.js/build/three.min.js"></script>
-	<script src="../libs/other/BinaryHeap.js"></script>
-	<script src="../libs/tween/tween.min.js"></script>
-	<script src="../libs/d3/d3.js"></script>
-	<script src="../libs/proj4/proj4.js"></script>
-	<script src="../libs/openlayers3/ol.js"></script>
-	<script src="../libs/i18next/i18next.js"></script>
-	<script src="../libs/jstree/jstree.js"></script>
-	<script src="../build/potree/potree.js"></script>
-	<script src="../libs/plasio/js/laslaz.js"></script>
-	<script src="../libs/other/PLYLoader.js"></script>
-	<script src="../libs/other/OBJLoader.js"></script>
-	
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/spectrum/spectrum.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/three.js/build/three.min.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/other/BinaryHeap.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/tween/tween.min.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/d3/d3.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/proj4/proj4.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/openlayers3/ol.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/i18next/i18next.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/jstree/jstree.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/build/potree/potree.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/plasio/js/laslaz.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/other/PLYLoader.js"></script>
+	<script src="https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/libs/other/OBJLoader.js"></script>
+
 	<!-- INCLUDE ADDITIONAL DEPENDENCIES HERE -->
 	<!-- INCLUDE SETTINGS HERE -->
-	
+
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
 		<div id="potree_render_area"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
-	
+
 	<script>
-	
+
 		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
-		
+
 		viewer.setEDLEnabled(false);
 		viewer.setFOV(60);
 		viewer.setPointBudget(1*2000*1000);
 		viewer.loadSettingsFromURL();
-		
+
 		viewer.setDescription("Point cloud courtesy of <a target='_blank' href='https://www.sigeom.ch/'>sigeom sa</a>");
-		
+
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');
 			$("#menu_tools").next().show();
 			$("#menu_scene").next().show();
 			//viewer.toggleSidebar();
 		});
-		
+
 		// Sigeom
-			Potree.loadPointCloud("http://webdisk.andrewnagl.com/potree/pointclouds/Jarretsville/cloud.js", "sigeom.sa", function(e){
+			Potree.loadPointCloud("https://raw.githubusercontent.com/fourstops/fourstops.github.io/master/pointclouds/Jarretsville/cloud.js", "sigeom.sa", function(e){
 			let scene = viewer.scene;
 			scene.addPointCloud(e.pointcloud);
-			
+
 			let material = e.pointcloud.material;
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
@@ -71,13 +71,13 @@
 			scene.view.position.set(363878.827, 4370057.719, 286.427);
 			scene.view.lookAt(new THREE.Vector3(364173.274, 4370038.547, 63.675));
 		});
-		
+
 		var loader = new THREE.PLYLoader();
 		loader.load( Potree.resourcePath + "/models/merged.ply", (geometry) => {
 			geometry.computeVertexNormals();
-			
+
 			// place three instances of this bunny into the scene
-			
+
 			let mesh1;
 			{
 				let material = new THREE.MeshPhysicalMaterial( {
@@ -85,7 +85,7 @@
 					metalness: 0,
 					roughness: 0.5,
 					clearCoat:  1.0,
-					clearCoatRoughness: 1.0,	
+					clearCoatRoughness: 1.0,
 					shading: THREE.FlatShading,
 					reflectivity: 0.5
 				} );
@@ -95,11 +95,11 @@
 				mesh1.rotation.set(Math.PI / 2, Math.PI, 0)
 				viewer.scene.scene.add(mesh1);
 			}
-			
+
 			let mesh2;
 			{
-				let material = new THREE.MeshStandardMaterial( { 
-					color: 0x0055ff, 
+				let material = new THREE.MeshStandardMaterial( {
+					color: 0x0055ff,
 					shading: THREE.FlatShading,
 					metalness: 0.2} );
 				mesh2 = new THREE.Mesh( geometry, material );
@@ -108,7 +108,7 @@
 				mesh2.rotation.set(Math.PI / 2, Math.PI, 0)
 				viewer.scene.scene.add(mesh2);
 			}
-			
+
 			let mesh3;
 			{
 				let material = new THREE.MeshPhysicalMaterial( {
@@ -131,31 +131,31 @@
 				let tree = $(`#jstree_scene`);
 				let parentNode = "other";
 
-				let bunny1ID = tree.jstree('create_node', parentNode, { 
-						"text": "Bunny 1", 
+				let bunny1ID = tree.jstree('create_node', parentNode, {
+						"text": "Bunny 1",
 						"icon": `${Potree.resourcePath}/icons/triangle.svg`,
 						"data": mesh1
-					}, 
+					},
 					"last", false, false);
 				tree.jstree(mesh1.visible ? "check_node" : "uncheck_node", bunny1ID);
 
-				let bunny2ID = tree.jstree('create_node', parentNode, { 
-						"text": "Bunny 2", 
+				let bunny2ID = tree.jstree('create_node', parentNode, {
+						"text": "Bunny 2",
 						"icon": `${Potree.resourcePath}/icons/triangle.svg`,
 						"data": mesh2
-					}, 
+					},
 					"last", false, false);
 				tree.jstree(mesh2.visible ? "check_node" : "uncheck_node", bunny2ID);
 
-				let bunny3ID = tree.jstree('create_node', parentNode, { 
-						"text": "Bunny 3", 
+				let bunny3ID = tree.jstree('create_node', parentNode, {
+						"text": "Bunny 3",
 						"icon": `${Potree.resourcePath}/icons/triangle.svg`,
 						"data": mesh3
-					}, 
+					},
 					"last", false, false);
 				tree.jstree(mesh3.visible ? "check_node" : "uncheck_node", bunny3ID);
 			});
-			
+
 		});
 
 
@@ -195,11 +195,11 @@
 					let tree = $(`#jstree_scene`);
 					let parentNode = "other";
 
-					let bunnyID = tree.jstree('create_node', parentNode, { 
-							text: "Bunny Textured", 
+					let bunnyID = tree.jstree('create_node', parentNode, {
+							text: "Bunny Textured",
 							icon: `${Potree.resourcePath}/icons/triangle.svg`,
 							data: object
-						}, 
+						},
 						"last", false, false);
 					tree.jstree(object.visible ? "check_node" : "uncheck_node", bunnyID);
 
@@ -210,7 +210,7 @@
 		}
 
 	</script>
-	
-	
+
+
   </body>
 </html>
